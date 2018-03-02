@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5dbb1eaf-c50d-47fe-910b-60908b035484" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ActiveLayer.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CompareColors.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ConvertColor.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CopyAndPaste.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ps.py" afterPath="$PROJECT_DIR$/ps.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -60,7 +57,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CopyAndPaste.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CopyAndPaste.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CopyAndPaste.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="500">
@@ -68,6 +65,26 @@
               <folding>
                 <element signature="e#379#401#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="3" column="12" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="12" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -92,6 +109,7 @@
         <option value="$PROJECT_DIR$/CompareColors.py" />
         <option value="$PROJECT_DIR$/ActiveLayer.py" />
         <option value="$PROJECT_DIR$/CopyAndPaste.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -408,6 +426,22 @@
           <folding>
             <element signature="e#379#401#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="12" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
