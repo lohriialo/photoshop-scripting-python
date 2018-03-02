@@ -26,11 +26,12 @@ Python allows you to access COM and it's DOM with the help of a Python extension
 from win32com.client import Dispatch
 
 app = Dispatch("Photoshop.Application")
+doc = app.Documents.Add(320, 240)
+layerRef = doc.ArtLayers.Add()
 
 psTextLayer = 2  # from enum PsLayerKind
-docRef = app.Documents.Add(320, 240)
-layerRef = docRef.ArtLayers.Add()
 layerRef.Kind = psTextLayer
+
 textItem = layerRef.TextItem
 textItem.Contents = "HELLO WORLD!"
 textItem.Position = (120, 120)
