@@ -24,34 +24,3 @@ if docRef.ActiveLayer.Name != app.ActiveDocument.Layers.Item(len(docRef.Layers) 
     docRef.ActiveLayer = docRef.Layers.Item(len(docRef.Layers) - 1)
 else:
     docRef.ActiveLayer = docRef.Layers.Item(1)
-
-
-
-
-
-
-# if (app.documents.length == 0)
-# {
-#   var docRef = app.documents.add();
-# }
-# else
-# {
-#   var docRef = app.activeDocument;
-# }
-#
-# if (docRef.layers.length < 2)
-# {
-#   docRef.artLayers.add();
-# }
-#
-# var activeLayerName = docRef.activeLayer.name;
-# var setLayerName = "";
-# if (docRef.activeLayer.name != app.activeDocument.layers[docRef.layers.length - 1].name)
-# {
-#   docRef.activeLayer = docRef.layers[docRef.layers.length - 1];
-# }
-# else
-# {
-#   docRef.activeLayer = docRef.layers[0];
-# }
-# docRef = null;
