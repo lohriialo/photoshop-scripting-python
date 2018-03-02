@@ -1,4 +1,5 @@
 # Photoshop Scripting in Python
+![](https://imgur.com/8wOWcPX "Photoshop Python")
 
 Scripting in Photoshop is used to automate repetitive tasks and are often used as a creative tool to streamline tasks that might be too
 time consuming to do manually. For example, you could write a script to generate a number of localized
