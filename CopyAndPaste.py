@@ -35,7 +35,7 @@ if strtRulerUnits is not psInches:
 srcDoc = app.Documents.Add(7, 5, 72, None, psNewRGB, psWhite)
 
 # Make sure the active layer is not a text layer, which cannot be copied to the clipboard
-if srcDoc.activeLayer.kind != psTextLayer:
+if srcDoc.ActiveLayer.Kind != psTextLayer:
     # Select the left half of the document. Selections are always expressed
     # in pixels regardless of the current ruler unit type, so we're computing
     # the selection corner points based on the inch unit width and height
