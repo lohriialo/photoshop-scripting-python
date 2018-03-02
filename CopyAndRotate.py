@@ -1,12 +1,12 @@
 # Crop and rotate the active document.
 
-import win32com.client
+from win32com.client import Dispatch, GetActiveObject, GetObject
 
 # Start up Photoshop application
 # Or get Reference to already running Photoshop application instance
 
-# app = win32com.client.Dispatch('Photoshop.Application')
-app = win32com.client.GetActiveObject("Photoshop.Application")
+# app = Dispatch('Photoshop.Application')
+app = GetActiveObject("Photoshop.Application")
 
 # PS constants, see psCC2018.py
 psPixels = 1

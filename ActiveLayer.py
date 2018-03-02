@@ -1,13 +1,13 @@
 # Set the active layer to the last art layer of the active document, or the
 # first if the last is already active.
 
-import win32com.client
+from win32com.client import Dispatch, GetActiveObject, GetObject
 # Start up Photoshop application
 # app = win32com.client.Dispatch('Photoshop.Application')
 
 # Or get Reference to already running Photoshop application instance
-# app = win32com.client.GetObject(Class="Photoshop.Application")
-app = win32com.client.GetActiveObject("Photoshop.Application")
+# app = GetObject(Class="Photoshop.Application")
+app = GetActiveObject("Photoshop.Application")
 
 if len(app.Documents) < 1:
     docRef = app.Documents.Add()

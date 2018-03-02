@@ -1,6 +1,5 @@
-import pscc2018 as ps
 import time
-import win32com.client
+from win32com.client import Dispatch, GetActiveObject, GetObject
 
 # This is a test script written to see how Python scripting works in executing
 # Photoshop actions, ExecuteAction()
@@ -9,11 +8,11 @@ import win32com.client
 # See https://www.adobe.com/devnet/photoshop/scripting.html
 
 # Start up Photoshop application
-# app = ps.Dispatch('Photoshop.Application')
+# app = Dispatch('Photoshop.Application')
 
 # Or get Reference to already running Photoshop application
-# app = win32com.client.GetObject(Class="Photoshop.Application")
-app = win32com.client.GetActiveObject("Photoshop.Application")
+# app = GetObject(Class="Photoshop.Application")
+app = GetActiveObject("Photoshop.Application")
 
 # psDisplayNoDialogs is a PS COM constant, see pscc2018.py or scripting COM
 psDisplayNoDialogs = 3
@@ -22,9 +21,9 @@ for index, x in enumerate(range(50)):
 
     # Execute an existing action from action palette
     idPly = app.CharIDToTypeID("Ply ")
-    desc8 = ps.ActionDescriptor()
+    desc8 = Dispatch('Photoshop.ActionDescriptor')
     idnull = app.CharIDToTypeID("null")
-    ref3 = ps.ActionReference()
+    ref3 = Dispatch('Photoshop.ActionReference')
     idActn = app.CharIDToTypeID("Actn")
     ref3.PutName(idActn, "Sepia Toning (layer)")
     idASet = app.CharIDToTypeID("ASet")
@@ -36,18 +35,18 @@ for index, x in enumerate(range(50)):
 
     # Create solid color fill layer.
     idMk = app.CharIDToTypeID("Mk  ")
-    desc21 = ps.ActionDescriptor()
+    desc21 = Dispatch('Photoshop.ActionDescriptor')
     idNull = app.CharIDToTypeID("null")
-    ref12 = ps.ActionReference()
+    ref12 = Dispatch('Photoshop.ActionReference')
     idContentLayer1 = app.StringIDToTypeID("contentLayer")
     ref12.PutClass(idContentLayer1)
     desc21.PutReference(idNull, ref12)
     idUsng = app.CharIDToTypeID("Usng")
-    desc22 = ps.ActionDescriptor()
+    desc22 = Dispatch('Photoshop.ActionDescriptor')
     idType = app.CharIDToTypeID("Type")
-    desc23 = ps.ActionDescriptor()
+    desc23 = Dispatch('Photoshop.ActionDescriptor')
     idClr = app.CharIDToTypeID("Clr ")
-    desc24 = ps.ActionDescriptor()
+    desc24 = Dispatch('Photoshop.ActionDescriptor')
     idRd = app.CharIDToTypeID("Rd  ")
     desc24.PutDouble(idRd, index)
     idGrn = app.CharIDToTypeID("Grn ")
@@ -65,9 +64,9 @@ for index, x in enumerate(range(50)):
 
     # Select mask
     idSlct = app.CharIDToTypeID("slct")
-    desc38 = ps.ActionDescriptor()
+    desc38 = Dispatch('Photoshop.ActionDescriptor')
     idNull1 = app.CharIDToTypeID("null")
-    ref20 = ps.ActionReference()
+    ref20 = Dispatch('Photoshop.ActionReference')
     idChnl1 = app.CharIDToTypeID("Chnl")
     idChnl2 = app.CharIDToTypeID("Chnl")
     idMsk = app.CharIDToTypeID("Msk ")

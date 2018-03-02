@@ -5,20 +5,19 @@
 # It checks the kind of the layer before making the selection to be
 # sure not to copy a text layer.
 
-import win32com.client
-import comtypes.client
-from array import array
+# from win32com.client import Dispatch, GetActiveObject, GetObject
+from comtypes.client import GetActiveObject
 
 # Start up Photoshop application
-# app = win32com.client.Dispatch('Photoshop.Application')
+# app = Dispatch('Photoshop.Application')
 
 # Or get Reference to already running Photoshop application instance
-# app = win32com.client.GetObject(Class="Photoshop.Application")
-# app = win32com.client.GetActiveObject("Photoshop.Application")
+# app = GetObject(Class="Photoshop.Application")
+# app = GetActiveObject("Photoshop.Application")
 
 # using comtypes instead on win32com
 # why? see sel_area below, also http://discourse.techart.online/t/selecting-in-photoshop-using-python-doesnt-work/205
-app = comtypes.client.GetActiveObject("Photoshop.Application")
+app = GetActiveObject("Photoshop.Application")
 
 # PS constants, see psCC2018.py
 psInches = 2

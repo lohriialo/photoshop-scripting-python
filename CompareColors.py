@@ -1,13 +1,13 @@
 # This script compares the app.foregroundColor
 # to the app.backgroundColor.
 
-import win32com.client
+from win32com.client import Dispatch, GetActiveObject, GetObject
 # Start up Photoshop application
-# app = win32com.client.Dispatch('Photoshop.Application')
+# app = Dispatch('Photoshop.Application')
 
 # Or get Reference to already running Photoshop application instance
-# app = win32com.client.GetObject(Class="Photoshop.Application")
-app = win32com.client.GetActiveObject("Photoshop.Application")
+# app = GetObject(Class="Photoshop.Application")
+app = GetActiveObject("Photoshop.Application")
 
 if app.ForegroundColor.IsEqual(app.BackgroundColor):
     print("They're Equal")
