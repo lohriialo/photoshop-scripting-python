@@ -1,5 +1,7 @@
 # This script demonstrates how you can use the action manager
 # to execute the Emboss filter.
+# Inorder to find all the IDs, see https://helpx.adobe.com/photoshop/kb/downloadable-plugins-and-content.html#ScriptingListenerplugin
+# This blog here exlains what a script listener is http://blogs.adobe.com/crawlspace/2006/05/installing_and_1.html
 
 from win32com.client import Dispatch, GetActiveObject, GetObject
 
