@@ -2,7 +2,7 @@
 # selections in the open document.
 
 # from win32com.client import Dispatch, GetActiveObject, GetObject
-from comtypes.client import GetActiveObject
+from comtypes.client import GetActiveObject, CreateObject
 
 # Start up Photoshop application
 # Or get Reference to already running Photoshop application instance
@@ -38,6 +38,12 @@ sel_area = ((0, 212), (300, 212), (300, 300), (0, 300))
 docRef.Selection.Select(sel_area, psReplaceSelection, 20, True)
 psGaussianNoise = 2     # from enum PsNoiseDistribution
 active_layer.ApplyAddNoise(15, psGaussianNoise, False)
+
+backColor = CreateObject("Photoshop.SolidColor")
+backColor.HSB.Hue = 0
+backColor.HSB.Saturation = 0
+backColor.HSB.Brightness = 100
+app.BackgroundColor = backColor
 
 sel_area2 = ((120, 20), (210, 20), (210, 110), (120, 110))
 docRef.Selection.Select(sel_area2, psReplaceSelection, 25, False)

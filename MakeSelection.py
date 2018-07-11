@@ -1,5 +1,5 @@
 # Get the active document and make a new selection.
-from comtypes.client import GetActiveObject
+from comtypes.client import GetActiveObject, CreateObject
 
 # Start up Photoshop application
 # Or get Reference to already running Photoshop application instance

@@ -1,6 +1,7 @@
 # Create a new art layer and convert it to a text layer.
 # Set its contents, size and color.
-from win32com.client import Dispatch, GetActiveObject
+# from win32com.client import Dispatch, GetActiveObject
+from comtypes.client import GetActiveObject, CreateObject
 
 # Start up Photoshop application
 # Or get Reference to already running Photoshop application instance
@@ -22,7 +23,7 @@ app.displayDialogs = psDisplayNoDialogs
 docRef = app.Documents.Add(7, 5, 72)
 
 # create text color properties
-textColor = Dispatch("Photoshop.SolidColor")
+textColor = CreateObject("Photoshop.SolidColor")
 textColor.RGB.Red = 225
 textColor.RGB.Green = 0
 textColor.RGB.Blue = 0

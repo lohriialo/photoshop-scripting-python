@@ -1,6 +1,6 @@
 # This script will demonstrate how to load a selection from a saved alpha channel.
 
-from comtypes.client import GetActiveObject
+from comtypes.client import GetActiveObject, CreateObject
 
 # Get Reference to already running Photoshop application instance
 # using comtypes instead on win32com why? cos win32com has problem accepting 2 dimension array
