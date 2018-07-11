@@ -8,7 +8,7 @@ from win32com.client import Dispatch, GetActiveObject, GetObject
 # app = Dispatch('Photoshop.Application')
 app = GetActiveObject("Photoshop.Application")
 
-fileName = "C:\Users\lalo\Documents\GitHub\photoshop-scripting-python\PS_Samples_Files\Layer Comps.psd"
+fileName = "C:\Git\PS_Samples_Files\Layer Comps.psd"
 docRef = app.Open(fileName)
 
 nLayerSets = docRef.LayerSets
