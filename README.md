@@ -43,4 +43,6 @@ textItem.Position = (120, 120)
 * [Photoshop Scripting API Reference](https://www.adobe.com/devnet/photoshop/scripting.html)
 * [Photoshop Scripting Tutorials](https://www.youtube.com/playlist?list=PLUEniN8BpU8-Qmjyv3zyWaNvDYwJOJZ4m)
 
-# Also see [InDesign Scripting in Python](https://github.com/lohriialo/indesign-scripting-python)
+# Also see
+* [InDesign Scripting in Python](https://github.com/lohriialo/indesign-scripting-python)
+* [Illustrator Scripting in Python](https://github.com/lohriialo/illustrator-scripting-python)
