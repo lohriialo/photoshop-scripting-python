@@ -37,6 +37,9 @@ textItem.Contents = "HELLO WORLD!"
 textItem.Position = (120, 120)
 ```
 
+# GUI tool example
+See [`gui_tool`](https://github.com/lohriialo/indesign-scripting-python/tree/master/flask-demo) for an example of how you can use Photoshop Scripting to develop your own tool/utilities
+
 # Photoshop Scripting Resources
 * [Photoshop Scripting Documentation](https://www.adobe.com/devnet/photoshop/scripting.html)
 * [Photoshop Scripting Developer Forum](https://forums.adobe.com/community/photoshop/photoshop_scripting)
