@@ -1,4 +1,6 @@
 # GUI tool example with Photoshop Scripting in Python
+This example demonstrates how to use a GUI toolkit like PyQt to build your own custom tool/utility which can then interact with Photoshop via COM on Windows.
+
 ![](https://i.imgur.com/6l3kXw8.png "Photoshop Bulk Image Resizer")
 
 # Requiremments:
