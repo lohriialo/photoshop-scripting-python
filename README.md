@@ -40,6 +40,9 @@ textItem.Position = (120, 120)
 # GUI tool example
 See [`gui_tool`](https://github.com/lohriialo/photoshop-scripting-python/tree/master/gui_tool_example) for an example of how you can use Photoshop Scripting to develop your own tool/utilities
 
+# Scripting on Mac?
+Yes, scripting on Mac is also possible, see [mac_scripting](https://github.com/lohriialo/photoshop-scripting-python/tree/master/mac_scripting) for more details
+
 # Photoshop Scripting Resources
 * [Photoshop Scripting Documentation](https://www.adobe.com/devnet/photoshop/scripting.html)
 * [Photoshop Scripting Developer Forum](https://forums.adobe.com/community/photoshop/photoshop_scripting)
