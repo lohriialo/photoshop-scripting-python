@@ -1,1 +1,16 @@
 
+# Photoshop Scripting in Python on Mac
+Just like `comtypes` is used to script via COM on windows, `appscript` is used to script on Mac. Photoshop scripting is exposed via it's scriptable dictionary. 
+
+[Appscript](https://github.com/lohriialo/appscript) is a high-level, user-friendly Apple event bridge that allows you to control Apple's Scriptable Mac OS X applications from Python.
+
+`pip install appscript`
+
+Usage:
+
+```python
+from appscript import *
+
+psApp = app('/Applications/Adobe Photoshop CC 2018/Adobe Photoshop CC 2018.app')
+psApp.open(mactypes.Alias(file_name))
+```
