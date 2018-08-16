@@ -14,3 +14,4 @@ from appscript import *
 psApp = app('/Applications/Adobe Photoshop CC 2018/Adobe Photoshop CC 2018.app')
 psApp.open(mactypes.Alias(file_name))
 ```
+See [doc/reference](https://github.com/lohriialo/photoshop-scripting-python/tree/master/mac_scripting/doc_reference) for more details
