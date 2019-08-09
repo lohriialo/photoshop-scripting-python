@@ -55,7 +55,7 @@ Yes, scripting on Mac is also possible, see [mac_scripting](https://github.com/l
 * [InDesign Scripting in Python](https://github.com/lohriialo/indesign-scripting-python)
 * [Illustrator Scripting in Python](https://github.com/lohriialo/illustrator-scripting-python)
 
-#Contribution
+# Contribution
 If you've written a useful Photoshop Python script and wants to share with the world, please create a new issue with the file as an attachment to the issue.
 
 When you submit a script, please try to include the following information at the start of your script
