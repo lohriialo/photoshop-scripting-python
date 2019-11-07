@@ -5,6 +5,7 @@ venv
 pscc2018.pyc
 my-test.py
 .DS_Store
+ReadMeFirst.txt
 
 
 # Default stuff for Github, Python

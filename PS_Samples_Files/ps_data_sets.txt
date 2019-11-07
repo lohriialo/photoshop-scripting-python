@@ -1,0 +1,6 @@
+{contents of FlowerShow.txt} 
+Variable 1, Variable 2, Variable 3
+true, TULIP, c:\My Documents\tulip.jpg 
+false, SUNFLOWER, c:\My Documents\sunflower.jpg 
+false, CALLA LILY, c:\My Documents\calla.jpg 
+true, VIOLET, c:\My Documents\violet.jpg
