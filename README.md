@@ -37,7 +37,7 @@ textItem.Contents = "HELLO WORLD!"
 textItem.Position = (120, 120)
 ```
 # How to inspect a scripting object properties?
-There's not a straight forward way, you need to read the documentation to understand what properties/attributes are available for a scripting object, or possibly a COM browser. For example, I've extracted the Python scripting object reference for Photoshop CC 2018 at [doc_reference](https://github.com/lohriialo/photoshop-scripting-python/tree/master/doc_reference)
+There's not a straight forward way, you need to read the documentation to understand what properties/attributes are available for a scripting object, or possibly a COM browser. For example, I've extracted the Python scripting object reference for Photoshop CC 2018 at [doc_reference](https://github.com/lohriialo/photoshop-scripting-python/tree/master/api_reference)
 
 # GUI tool example
 See [`gui_tool`](https://github.com/lohriialo/photoshop-scripting-python/tree/master/gui_tool_example) for an example of how you can use Photoshop Scripting to develop your own tool/utilities
