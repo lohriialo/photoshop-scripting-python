@@ -12,7 +12,7 @@ a new document, add a layer to an existing document, or change the background co
 the functionality available through the Photoshop user interface is available through the DOM.
 
 # But why Python?
-Photoshop scripting officially supports JavaScript, AppleScript & VBScript. However, Scripting in Python is also fairly easy if not easier if you're already comfortable with Python. You may have already heard that Python is gaining in popularity, but did you know it’s now the most popular introductory programming language in U.S. universities? Python is also cross platform just like JavaScript is and lately becoming one of the fastest growing programming language according to [StackOverflow](https://stackoverflow.blog/2017/09/06/incredible-growth-python) as of September 2017
+Photoshop scripting officially supports JavaScript, AppleScript & VBScript. However, Scripting in Python is also fairly easy if not easier if you're already comfortable with Python. You may have already heard that Python is gaining in popularity, but did you know it’s now the most popular introductory programming language in U.S. universities? Python is also cross platform just like JavaScript is and lately becoming one of the fastest growing programming language according to StackOverflow [as of 2017](https://stackoverflow.blog/2017/09/06/incredible-growth-python) / [as of 2019](https://insights.stackoverflow.com/survey/2019#key-results)
 
 Python is easy to use, powerful, and versatile, making it a great choice for beginners and experts alike. Python’s readability makes it a great first programming language - it allows you to think like a programmer and not waste time understanding the mysterious syntax that other programming languages can require.
 
