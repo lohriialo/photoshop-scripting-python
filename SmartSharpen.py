@@ -1,5 +1,5 @@
 # This script demonstrates how you can use the action manager
-# to execute the Emboss filter.
+# to execute the Smart Sharpen filter.
 
 from win32com.client import Dispatch, GetActiveObject, GetObject
 
