@@ -46,9 +46,11 @@ See [`gui_tool`](https://github.com/lohriialo/photoshop-scripting-python/tree/ma
 Yes, scripting on Mac is also possible, see [mac_scripting](https://github.com/lohriialo/photoshop-scripting-python/tree/master/mac_scripting) for more details
 
 # Photoshop Scripting Resources
-* [Photoshop Scripting Documentation](https://www.adobe.com/devnet/photoshop/scripting.html)
-* [Photoshop Scripting Developer Forum](https://forums.adobe.com/community/photoshop/photoshop_scripting)
-* [Photoshop Scripting API Reference](https://www.adobe.com/devnet/photoshop/scripting.html)
+* [Photoshop API landing page](https://developer.adobe.com/photoshop)
+* [Photoshop Scripting Documentation](https://developer.adobe.com/console/1127/servicesandapis/ps)
+* [Photoshop Scripting Developer Forum](https://community.adobe.com/t5/photoshop-ecosystem/ct-p/ct-photoshop?page=1&sort=latest_replies&lang=all&tabid=all&topics=label-sdk%2Clabel-actionsandscripting)
+* [Photoshop Scripting API Reference - PDF](https://github.com/Adobe-CEP/CEP-Resources/blob/master/Documentation/Product%20specific%20Documentation/Photoshop%20Scripting/photoshop-javascript-ref-2020.pdf)
+* [Photoshop Scripting API Reference - Online](https://theiviaxx.github.io/photoshop-docs/Photoshop/Application.html)
 * [Photoshop Scripting Tutorials](https://www.youtube.com/playlist?list=PLUEniN8BpU8-Qmjyv3zyWaNvDYwJOJZ4m)
 
 # Also see
