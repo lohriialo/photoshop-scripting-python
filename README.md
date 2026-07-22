@@ -1,83 +1,312 @@
-# Photoshop Scripting in Python
-![](https://i.imgur.com/8wOWcPX.png "Photoshop Python")
+# Photoshop Scripting Automation
 
-Scripting in Photoshop is used to automate repetitive tasks and are often used as a creative tool to streamline tasks that might be too
-time consuming to do manually. For example, you could write a script to generate a number of localized
-versions of a particular image or to gather information about the various color profiles used by a collection
-of images.
+<p align="center">
+  <img src="https://i.imgur.com/8wOWcPX.png" alt="Photoshop Python" width="520"/>
+</p>
 
-# Photoshop COM & DOM
-Photoshop can be scripted through COM(Component Object Model). Its DOM(Document Object Model) is the same when accessing it through either its own JavaScript engine or Python or any other scripting language it supports. The Photoshop DOM consists of a hierarchical representation of the Photoshop application, the documents used in it, and the components of the documents. The DOM allows you to programmatically access and manipulate the document and its components. For example, through the DOM, you can create
-a new document, add a layer to an existing document, or change the background color of a layer. Most of
-the functionality available through the Photoshop user interface is available through the DOM.
+<p align="center">
+  <strong>Control Adobe Photoshop with Python</strong> — examples, helpers,<br/>
+  ready-made batch recipes, and a simple desktop toolkit.
+</p>
 
-# But why Python?
-Photoshop scripting officially supports JavaScript, AppleScript & VBScript. However, Scripting in Python is also fairly easy if not easier if you're already comfortable with Python. You may have already heard that Python is gaining in popularity, but did you know it’s now the most popular introductory programming language in U.S. universities? Python is also cross platform just like JavaScript is and lately becoming one of the fastest growing programming language according to StackOverflow [as of 2017](https://stackoverflow.blog/2017/09/06/incredible-growth-python) / [as of 2019](https://insights.stackoverflow.com/survey/2019#key-results)
+<p align="center">
+  <a href="https://github.com/lohriialo/photoshop-scripting-python/stargazers"><img src="https://img.shields.io/github/stars/lohriialo/photoshop-scripting-python?style=for-the-badge&logo=github&color=yellow" alt="GitHub stars"/></a>
+  <a href="https://github.com/lohriialo/photoshop-scripting-python/network/members"><img src="https://img.shields.io/github/forks/lohriialo/photoshop-scripting-python?style=for-the-badge&logo=github&color=blue" alt="GitHub forks"/></a>
+  <a href="https://github.com/lohriialo/photoshop-scripting-python/watchers"><img src="https://img.shields.io/github/watchers/lohriialo/photoshop-scripting-python?style=for-the-badge&logo=github&color=green" alt="GitHub watchers"/></a>
+</p>
 
-Python is easy to use, powerful, and versatile, making it a great choice for beginners and experts alike. Python’s readability makes it a great first programming language - it allows you to think like a programmer and not waste time understanding the mysterious syntax that other programming languages can require.
+<p align="center">
+  <img src="https://img.shields.io/github/license/lohriialo/photoshop-scripting-python?style=flat-square" alt="License"/>
+  <img src="https://img.shields.io/badge/python-3.9%2B-blue?style=flat-square&logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/platform-Windows%20%7C%20macOS-lightgrey?style=flat-square" alt="Platform"/>
+  <img src="https://img.shields.io/badge/Photoshop-CC%202018%E2%80%932025-31A8FF?style=flat-square&logo=adobephotoshop&logoColor=white" alt="Photoshop"/>
+  <img src="https://img.shields.io/github/last-commit/lohriialo/photoshop-scripting-python?style=flat-square" alt="Last commit"/>
+  <img src="https://img.shields.io/github/issues/lohriialo/photoshop-scripting-python?style=flat-square" alt="Issues"/>
+  <a href="https://github.com/lohriialo/photoshop-scripting-python"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square" alt="PRs welcome"/></a>
+</p>
 
-# Getting Started
-Python allows you to access COM and it's DOM with the help of a Python extensions like  "pypiwin32" or "comtypes". Install these modules and you're ready to start scripting Photoshop in Python
+---
 
-* `pip install pypiwin32` or `pip install comtypes`
+Photoshop scripting means **telling Photoshop what to do with code** instead of clicking through the same steps every time. Typical uses:
 
-# Hello World!
-```python
-from win32com.client import Dispatch
+- Make many versions of one design (different languages, sizes, or colors)
+- Export a folder of files overnight
+- Check color settings across a library of images
+- Swap text in templates, add watermarks, run saved Actions on hundreds of files
 
-app = Dispatch("Photoshop.Application")
-doc = app.Documents.Add(320, 240)
-layerRef = doc.ArtLayers.Add()
+Adobe’s own scripting languages are **JavaScript**, **AppleScript** (Mac), and **VBScript** (Windows). This project shows how to do the **same kinds of jobs in Python**—which many people already use for data, tools, and AI coding assistants.
 
-psTextLayer = 2  # from enum PsLayerKind
-layerRef.Kind = psTextLayer
+### How Python talks to Photoshop
 
-textItem = layerRef.TextItem
-textItem.Contents = "HELLO WORLD!"
-textItem.Position = (120, 120)
+Think of Photoshop as an app you can remote-control:
+
+1. Your Python script **connects** to a running (or newly launched) Photoshop.
+2. It works with a **tree of objects** the same way Adobe’s JavaScript does: the app, open documents, layers, selections, colors, and so on.
+3. Almost anything you can do in the menus can be done from that tree—create a document, rename a layer, apply a filter, save a JPEG.
+
+On **Windows**, that connection uses Microsoft’s automation interface (often called COM) via libraries like `pywin32` or `comtypes`. On **macOS**, it uses Apple’s automation bridge via `appscript`. The ideas match; the Python spelling differs slightly by platform (see the sample folders below).
+
+Python is a good fit because it is readable, common in schools and industry, and the language many AI coding tools generate by default. Assistants still need **real, working examples**—not guesswork. This repository is a place to learn from, copy from, and point tools at: small demos, production-style recipes, and helpers so scripts keep working on other people’s machines. If something is unclear or missing, [open an issue](https://github.com/lohriialo/photoshop-scripting-python/issues). Contributions and citations in tools or learning materials are welcome.
+
+### Where to start
+
+| If you want to… | Go here |
+|-----------------|--------|
+| Learn with short examples | [`sample_scripts/`](sample_scripts/) |
+| Reuse connect / path / constant helpers | package `photoshop_scripting` |
+| Run common studio batch jobs from the command line | [`recipes/`](recipes/) |
+| Use a point-and-click batch app | [`tools/photoshop_toolkit`](tools/photoshop_toolkit/) |
+| Compare plugins, cloud APIs, and other options | [docs/landscape.md](docs/landscape.md) |
+
+Also included: Action Manager and JavaScript bridge examples, optional COM type dumps under [`api_reference/`](api_reference/), and MIT-licensed project code.
+
+---
+
+## Quick start
+
+### 1. Clone & install
+
+```bash
+git clone https://github.com/lohriialo/photoshop-scripting-python.git
+cd photoshop-scripting-python
+
+# Windows
+pip install -e ".[windows]"
+
+# macOS
+pip install -e ".[macos]"
+
+# Optional desktop toolkit UI
+pip install -e ".[windows,gui]"
 ```
-# How to inspect scripting object properties?
-There's not a straight forward way, you need to read the documentation to understand what properties/attributes are available for a scripting object, or possibly a COM browser. For example, I've extracted the Python scripting object reference for Photoshop CC 2018 at [api_reference](https://github.com/lohriialo/photoshop-scripting-python/tree/master/api_reference)
 
-# GUI tool example
-See [`gui_tool`](https://github.com/lohriialo/photoshop-scripting-python/tree/master/gui_tool_example) for an example of how you can use Photoshop Scripting to develop your own tool/utilities
+### 2. Hello World (Windows)
 
-# Scripting on Mac?
-Yes, scripting on Mac is also possible, see [mac_scripting](https://github.com/lohriialo/photoshop-scripting-python/tree/master/mac_scripting) for more details
+Start Photoshop, then:
 
-# Photoshop Scripting Resources
-* [Photoshop API landing page](https://developer.adobe.com/photoshop)
-* [Photoshop Scripting Documentation](https://developer.adobe.com/console/1127/servicesandapis/ps)
-* [Photoshop Scripting Developer Forum](https://community.adobe.com/t5/photoshop-ecosystem/ct-p/ct-photoshop?page=1&sort=latest_replies&lang=all&tabid=all&topics=label-sdk%2Clabel-actionsandscripting)
-* [Photoshop Scripting API Reference - PDF](https://github.com/Adobe-CEP/CEP-Resources/blob/master/Documentation/Product%20specific%20Documentation/Photoshop%20Scripting/photoshop-javascript-ref-2020.pdf)
-* [Photoshop Scripting API Reference - Online](https://theiviaxx.github.io/photoshop-docs/Photoshop/index.html)
-* [Photoshop Scripting Tutorials](https://www.youtube.com/playlist?list=PLUEniN8BpU8-Qmjyv3zyWaNvDYwJOJZ4m)
+```bash
+python sample_scripts/windows/HelloWorld.py
+```
 
-# Also see
-* [InDesign Scripting in Python](https://github.com/lohriialo/indesign-scripting-python)
-* [Illustrator Scripting in Python](https://github.com/lohriialo/illustrator-scripting-python)
+```python
+from photoshop_scripting import LayerKind, get_app
 
-# Contribution
-If you've written a useful Photoshop Python script and wants to share with the world, please create a new issue with the file as an attachment to the issue.
+app = get_app()
+doc = app.Documents.Add(320, 240)
+layer = doc.ArtLayers.Add()
+layer.Kind = int(LayerKind.TEXT)
+layer.TextItem.Contents = "HELLO WORLD!"
+layer.TextItem.Position = (120, 120)
+```
 
-When you submit a script, please try to include the following information at the start of your script
+### 3. Hello World (macOS)
+
+```bash
+pip install -e ".[macos]"   # or: pip install appscript
+python sample_scripts/mac_scripting/HelloWorld.py
+```
+
+```python
+from appscript import k
+from ps_connect import photoshop  # when running inside sample_scripts/mac_scripting/
+
+ps = photoshop()  # connects to your installed Photoshop app
+doc = ps.make(new=k.document, with_properties={k.width: 320, k.height: 240})
+layer = doc.make(new=k.art_layer, with_properties={k.kind: k.text_layer})
+layer.text_object.contents.set("HELLO WORLD")
+layer.text_object.position.set([120, 120])
+```
+
+If you have more than one Photoshop installed (for example a release build and a Beta), pick one:
+
+```bash
+export PHOTOSHOP_APP_PATH="/Applications/Adobe Photoshop 2026/Adobe Photoshop 2026.app"
+```
+
+Scripts under `sample_scripts/windows/` are for **Windows only**. On a Mac they will stop with a short message pointing you to `sample_scripts/mac_scripting/`.
+
+---
+
+## Photoshop Toolkit (GUI)
+
+A dark, production-style multi-tool for everyday batch work:
+
+| Tool | Purpose |
+|------|---------|
+| **Batch Resize** | Folder resize, aspect lock, resample methods |
+| **Batch Export** | PSD/TIFF → JPEG/PNG delivery folders |
+| **Layer Comps** | Export each layer comp to its own file |
+| **Run Actions** | Apply Actions-panel macros across a folder |
+| **Export Layers** | Each art layer → file (top Adobe forum ask) |
+| **Watermark** | Copyright text on image folders |
+| **Convert sRGB** | Web-safe color for delivery |
+| **Canvas Border** | Padding / mockup frames |
+| **Text Replace** | Bulk text-layer find/replace in PSD templates |
+
+```bash
+pip install -e ".[windows,gui]"
+python -m tools.photoshop_toolkit
+# or: photoshop-toolkit
+```
+
+See [`tools/photoshop_toolkit/README.md`](tools/photoshop_toolkit/README.md).
+
+> The older single-purpose resizer remains in [`tools/gui_tool_example/`](tools/gui_tool_example/) for reference.
+
+---
+
+## Sample scripts
+
+All learning samples live under [`sample_scripts/`](sample_scripts/):
+
+| Path | Platform |
+|------|----------|
+| [`sample_scripts/windows/`](sample_scripts/windows/) | Windows (Python talks to Photoshop via COM libraries) |
+| [`sample_scripts/mac_scripting/`](sample_scripts/mac_scripting/) | macOS (Python talks to Photoshop via appscript) |
+
+Full list by topic: [`sample_scripts/README.md`](sample_scripts/README.md).  
+Assets: [`sample_scripts/PS_Samples_Files/`](sample_scripts/PS_Samples_Files/).
+
+---
+
+## Production recipes
+
+```bash
+python recipes/batch_export/export_folder.py ./in ./out --format jpg
+python recipes/layer_comps/export_comps.py ./out --format png
+python recipes/run_action/run_action_folder.py ./in "Molten Lead"
+python recipes/jsx_bridge/run_jsx.py
+python recipes/smart_object/replace_smart_object.py --content photo.jpg
+# Community favorites
+python recipes/export_layers/export_layers.py ./out --format png
+python recipes/watermark/watermark_folder.py ./in ./out --text "© Studio"
+python recipes/convert_srgb/convert_srgb.py ./in ./out
+python recipes/canvas_border/add_border.py ./in ./out --padding 40
+python recipes/text_replace/replace_text.py ./psds "DRAFT" "FINAL"
+```
+
+Full list: [`recipes/README.md`](recipes/README.md).
+
+---
+
+## Helper package (`photoshop_scripting`)
+
+Shared utilities so you do not copy the same “connect to Photoshop / find sample files / turn off dialogs” code into every script:
+
+```python
+from photoshop_scripting import (
+    get_app,
+    sample_path,
+    ensure_sample,
+    saved_preferences,
+    DialogModes,
+    LayerKind,
+    Units,
+)
+from photoshop_scripting.actions import do_action, do_javascript
+from photoshop_scripting.batch import batch_export_jpeg, export_layer_comps
+
+app = get_app()  # use open Photoshop, or start it if needed
+with saved_preferences(app, units=Units.PIXELS, dialogs=DialogModes.NO):
+    doc = app.Open(str(ensure_sample("Layer Comps.psd")))
+```
+
+| Module | What it is for |
+|--------|----------------|
+| `photoshop_scripting.app` | Connect to Photoshop on Windows or Mac |
+| `photoshop_scripting.constants` | Named numbers for layer types, units, etc. (instead of raw `2`, `3`, …) |
+| `photoshop_scripting.paths` | Find sample files inside this repo |
+| `photoshop_scripting.prefs` | Temporarily change settings (units, dialogs) and put them back |
+| `photoshop_scripting.actions` | Run Actions panel items, low-level “action manager” calls, or JavaScript snippets |
+| `photoshop_scripting.batch` | Folder-scale resize, export, layer comps, and similar jobs |
+
+---
+
+## Two Windows libraries: `win32com` and `comtypes`
+
+On Windows, either library can drive Photoshop. Details: **[docs/backends.md](docs/backends.md)**.
+
+**Practical tip:** use **comtypes** when you pass lists of points (for example selections). **win32com** is fine for simple document and layer work and for many Action Manager examples.
+
+---
+
+## Recording hard-to-find commands (ScriptListener)
+
+Some menu commands are awkward to call with the simple object tree above. Adobe’s free **ScriptingListener** plug-in watches what you do in Photoshop and writes a log you can turn into Python (or run as JavaScript from Python).
+
+Step-by-step install and examples: **[docs/action_manager.md](docs/action_manager.md)**
+
+Adobe downloads:
+
+- [Downloadable plug-ins page](https://helpx.adobe.com/photoshop/kb/downloadable-plugins-and-content.html) (ScriptingListener section)
+- [Windows package](https://download.adobe.com/pub/adobe/photoshop/win/13.x/Win_Scripting_Plug-In.zip)
+- [macOS package](https://download.adobe.com/pub/adobe/photoshop/mac/13.x/Mac_Scripting_Plug-In.dmg)
+
+---
+
+## When to use something else
+
+This project is for **local Photoshop** on your computer. If you need in-app plugins, cloud processing, or reading PSD files *without* opening Photoshop, see **[docs/landscape.md](docs/landscape.md)**.
+
+---
+
+## Optional type dumps
+
+[`api_reference/`](api_reference/) holds generated lists of Photoshop objects for older versions (CC 2018–2021). Handy for browsing names; day to day, prefer `photoshop_scripting.constants` and the samples. How to regenerate with **makepy**: [`api_reference/README.md`](api_reference/README.md).
+
+---
+
+## Project layout
+
+```text
+photoshop_scripting/             # Shared Python helpers
+sample_scripts/windows/          # Examples for Windows
+sample_scripts/mac_scripting/    # Examples for macOS
+sample_scripts/PS_Samples_Files/ # Images used by the examples
+tools/photoshop_toolkit/         # Desktop batch app
+tools/gui_tool_example/          # Older single-purpose resizer
+recipes/                         # Command-line workflows
+api_reference/                   # Optional object lists
+interop assemblies/              # C# interop DLLs + how to build them
+docs/                            # Extra guides
+```
+
+Building C# interop DLLs: [`interop assemblies/README.md`](interop%20assemblies/README.md).
+
+---
+
+## Resources
+
+- [Photoshop API landing page](https://developer.adobe.com/photoshop)
+- [Photoshop scripting docs (Adobe)](https://developer.adobe.com/photoshop/uxp/)
+- [Community forum](https://community.adobe.com/t5/photoshop-ecosystem/ct-p/ct-photoshop)
+- [JS reference (unofficial HTML)](https://theiviaxx.github.io/photoshop-docs/Photoshop/index.html)
+- [Scripting tutorials (YouTube)](https://www.youtube.com/playlist?list=PLUEniN8BpU8-Qmjyv3zyWaNvDYwJOJZ4m)
+
+### Also by the author
+
+- [InDesign Scripting in Python](https://github.com/lohriialo/indesign-scripting-python)
+- [Illustrator Scripting in Python](https://github.com/lohriialo/illustrator-scripting-python)
+
+---
+
+## Contributing
+
+PRs welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+Please include a short header on new samples:
+
 ```python
 # script_file_name.py
-
-# Created: 1st January 2019
-__author__ = 'Your Name or Original Author Name'
-__version__ = '1.0'
-
-"""
-A short description of what the script does
-"""
-
-"""
-Instructions on how to use the script, if any
-"""
-
+__author__ = "Your Name"
+__version__ = "1.0"
+"""What the script does + how to run it."""
 ```
-* Go to  [photoshop-scripting-python/issues/new](https://github.com/lohriialo/photoshop-scripting-python/issues/new)
-* Add title  as `Useful Script`
-* Drag & drop your .py script file into the description area
-* Click `Submit new issue`
+
+---
+
+## License
+
+MIT for project code — see [LICENSE](LICENSE).
+
+Adobe sample files, interop DLLs, and type-library dumps may be subject to Adobe terms and are **not** covered by the MIT license.

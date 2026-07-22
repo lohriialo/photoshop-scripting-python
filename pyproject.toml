@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "photoshop-scripting-python"
+version = "2.0.0"
+description = "Photoshop scripting automation for Python — samples, helpers, recipes (Windows COM + macOS appscript)"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+authors = [{ name = "lohriialo" }]
+keywords = ["photoshop", "adobe", "scripting", "automation", "com", "appscript"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3",
+    "Topic :: Multimedia :: Graphics",
+]
+dependencies = []
+
+[project.optional-dependencies]
+windows = ["pywin32>=306", "comtypes>=1.2.0"]
+macos = ["appscript>=1.2.0"]
+gui = ["PySide6>=6.5.0"]
+dev = ["ruff>=0.4.0"]
+all = [
+    "pywin32>=306; platform_system=='Windows'",
+    "comtypes>=1.2.0; platform_system=='Windows'",
+    "appscript>=1.2.0; platform_system=='Darwin'",
+    "PySide6>=6.5.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/lohriialo/photoshop-scripting-python"
+Repository = "https://github.com/lohriialo/photoshop-scripting-python"
+Issues = "https://github.com/lohriialo/photoshop-scripting-python/issues"
+Documentation = "https://github.com/lohriialo/photoshop-scripting-python#readme"
+
+[project.scripts]
+photoshop-toolkit = "tools.photoshop_toolkit.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["photoshop_scripting*", "tools*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+exclude = [
+    "api_reference",
+    "tools/gui_tool_example",
+    "sample_scripts/PS_Samples_Files",
+    "sample_scripts/mac_scripting/doc_reference",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = ["E501"]

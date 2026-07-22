@@ -1,0 +1,7 @@
+# Convenience pins for local development.
+# Prefer: pip install -e ".[windows,gui]"   or   pip install -e ".[macos]"
+
+comtypes>=1.2.0; platform_system=="Windows"
+pywin32>=306; platform_system=="Windows"
+appscript>=1.2.0; platform_system=="Darwin"
+PySide6>=6.5.0
